@@ -26,5 +26,5 @@ Top: Header
 H2: Winner Announcement
 H3:Start Button, Timer 
 H4: Player 1 or Player 2 
-Body: Board Game: 1 square with 25 blocks 
+Body: Board Game: 1 square with 20 blocks 
 Footer: Game Over
