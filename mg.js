@@ -9,9 +9,32 @@ class Player {
 const player1 = new Player('player1')
 const player2 = new Player('player2')
 
-let cardarray = []
+let cardarray = [
+    { name: "function that accepts functions as parameters and/or returns a function", img: "card1.png", }
+{ name: "function that accepts functions as parameters and/or returns a function", img: "card1.png", }
+{ name: "higher-order function", img: "card2.png", }
+{ name: "math.random()", img: "card3.png", }
+{ name: "returns a random number between 0 and 1", img: "card4.png", }
+{ name: "math.floor(1 + 0.5)", img: "card5.png", }
+{ name: "1", img: "card6.png", }
+{ name: "'Cynclaire Hough'.length", img: "card7.png", }
+{ name: "15", img: "card8.png", }
+{ name: "returns true || false", img: "card9.png", }
+{ name: "boolean", img: "card10.png", }
+{ name: "while (condition) {// statement}", img: "card11.png", }
+{ name: "while loop", img: "card12.png", }
+{ name: "const myArray = []; let i = 10", img: "card13.png", }
+{ name: "Output: 10", img: "card14.png", }
+{ name: "const arr = ["Ashley", "Michael", "Cody"]; for (let i of arr) {console.log(i)", img: "card15.png", }
+{ name: "Output: Ashley, Michael, Cody", img: "card16.png", }
+{ name: "Initialization", img: "card17.png", }
+{ name: "This expression runs before the execution of the first loop, and is usually used to create a counter.", img: "card18.png", }
+{ name: "let i = 0; while (i < 10) { console.log(i);}", img: "card19.png", }
+{ name: "infinite loop", img: "card20.png", }
 
-let id_cardarray = document.getElementById("id_cardarray")
+]
+
+let cardarray = document.getElementById("cardarray")
 
 
 
@@ -48,14 +71,24 @@ cardarray.push(new Card("'Cynclaire Hough'.length", "15"))
 cardarray.push(new Card("15", "'Cynclaire Hough'.length"))
 cardarray.push(new Card("returns true || false", "boolean"))
 cardarray.push(new Card("boolean", "returns true || false"))
+cardarray.push(new Card("while (condition) {// statement}", "while loop"))
+cardarray.push(new Card("const myArray = []; let i = 10", "Output: 10"))
+cardarray.push(new Card("const arr = ["Ashley", "Michael", "Cody"]; for (let i of arr) {console.log(i)", "Output: Ashley, Michael, Cody"))
+cardarray.push(new Card("Initialization", "This expression runs before the execution of the first loop, and is usually used to create a counter."))
+cardarray.push(new Card("let i = 0; while (i < 10) { console.log(i);}", "infinite loop"))
 
 function start() {
-    
-}
-
-var game = document.getElementById("cardboxes"){
 
 }
+
+var game = document.getElementById("cardboxes"); {
+
+}
+
+const box = document.createElement("box1");
+const textbox = document.createTextBox("function that accepts functions as parameters and/or returns a function");
+box.appendChild(textbox);
+document.getElementById("cardboxes").appendChild(box);
 
 
 /*need timer*/
@@ -100,7 +133,7 @@ Timer.prototype =
 
 var timer = new Timer({
     fps: 30,
-    run: function(){
+    run: function () {
         //run game code here
     }
 });
