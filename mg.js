@@ -9,6 +9,7 @@ class Player {
 const player1 = new Player('player1')
 const player2 = new Player('player2')
 
+/*
 let cardarray = [
     { name: "function that accepts functions as parameters and/or returns a function", img: "card1.png", }
 { name: "function that accepts functions as parameters and/or returns a function", img: "card1.png", }
@@ -25,7 +26,7 @@ let cardarray = [
 { name: "while loop", img: "card12.png", }
 { name: "const myArray = []; let i = 10", img: "card13.png", }
 { name: "Output: 10", img: "card14.png", }
-{ name: "const arr = ["Ashley", "Michael", "Cody"]; for (let i of arr) {console.log(i)", img: "card15.png", }
+{ name: "const arr = ['Ashley', 'Michael', 'Cody']; for (let i of arr) {console.log(i)", img: "card15.png", }
 { name: "Output: Ashley, Michael, Cody", img: "card16.png", }
 { name: "Initialization", img: "card17.png", }
 { name: "This expression runs before the execution of the first loop, and is usually used to create a counter.", img: "card18.png", }
@@ -33,15 +34,18 @@ let cardarray = [
 { name: "infinite loop", img: "card20.png", }
 
 ]
+*/
+
 
 let cardarray = document.getElementById("cardarray")
 
 
 
 class Card {
-    constructor(name, match) {
+    constructor(name, match, png) {
         this.name = name;
-        this.match = match
+        this.match = match;
+        this.png = png;
 
 
         /* 
@@ -73,70 +77,75 @@ cardarray.push(new Card("returns true || false", "boolean"))
 cardarray.push(new Card("boolean", "returns true || false"))
 cardarray.push(new Card("while (condition) {// statement}", "while loop"))
 cardarray.push(new Card("const myArray = []; let i = 10", "Output: 10"))
-cardarray.push(new Card("const arr = ["Ashley", "Michael", "Cody"]; for (let i of arr) {console.log(i)", "Output: Ashley, Michael, Cody"))
+cardarray.push(new Card("const arr = ['Ashley', 'Michael', 'Cody']; for (let i of arr) {console.log(i)", "Output: Ashley, Michael, Cody"))
 cardarray.push(new Card("Initialization", "This expression runs before the execution of the first loop, and is usually used to create a counter."))
 cardarray.push(new Card("let i = 0; while (i < 10) { console.log(i);}", "infinite loop"))
 
-function start() {
-
-}
+/*  add png to push card array and add missing element*/
 
 var game = document.getElementById("cardboxes"); {
 
 }
 
-const box = document.createElement("box1");
-const textbox = document.createTextBox("function that accepts functions as parameters and/or returns a function");
+const box = document.createElement("div");
+box.textContent = ("function that accepts functions as parameters and/or returns a function");
 box.appendChild(textbox);
 document.getElementById("cardboxes").appendChild(box);
+
+document.addEventListener("Start", function () {
+    let pngs = document.querySelectorAll("png");
+    pngs.forEach(png =>
+        png.addEventListener("click", flipCard)
+}))
 
 
 /*need timer*/
 
 function Timer(settings) {
-    this.settings = settings;
-    this.timer = null;
+        this.settings = settings;
+        this.timer = null;
 
-    this.fps = settings.fps || 30;
-    this.interval = Math.floor(1000 / 30);
-    this.timeInit = null;
+        this.fps = settings.fps || 30;
+        this.interval = Math.floor(1000 / 30);
+        this.timeInit = null;
 
-    return this;
-}
+        return this;
+    }
 
 Timer.prototype =
-{
-    run: function () {
-        var $this = this;
+    {
+        run: function () {
+            var $this = this;
 
-        this.settings.run();
-        this.timeInit += this.interval;
+            this.settings.run();
+            this.timeInit += this.interval;
 
-        this.timer = setTimeout(
-            function () { $this.run() },
-            this.timeInit - (new Date).getTime()
-        );
-    },
+            this.timer = setTimeout(
+                function () { $this.run() },
+                this.timeInit - (new Date).getTime()
+            );
+        },
 
-    start: function () {
-        if (this.timer == null) {
-            this.timeInit = (new Date).getTime();
-            this.run();
+        start: function () {
+            if (this.timer == null) {
+                this.timeInit = (new Date).getTime();
+                this.run();
+            }
+        },
+
+        stop: function () {
+            clearTimeout(this.timer);
+            this.timer = null;
         }
-    },
-
-    stop: function () {
-        clearTimeout(this.timer);
-        this.timer = null;
     }
-}
 
 var timer = new Timer({
-    fps: 30,
-    run: function () {
-        //run game code here
-    }
-});
+        fps: 30,
+        run: function () {
+            //run game code here
+        }
+    });
 
 timer.start();
 timer.stop();
+
