@@ -27,7 +27,7 @@ class Player {
 const player1 = new Player('player1')
 const player2 = new Player('player2')
 
-
+//card content
 let cardarray = [
     { name: "function that accepts functions as parameters and/or returns a function", img: "card1.png", },
     { name: "function that accepts functions as parameters and/or returns a function", img: "card1.png", },
@@ -53,10 +53,7 @@ let cardarray = [
 
 ]
 
-
-let testpic = png100
-pic.textcontent = document.getElementById.png100
-
+//card images
 let pngArray = [
     { name: "png1", },
     { name: "png2", },
@@ -80,6 +77,7 @@ let pngArray = [
     { name: "png20", },
 ];
 
+//variables and DOM
 let gameboard = document.querySelector(".grid");
 let scoreBoard = document.querySelector(".scoreBoard");
 let popup = document.querySelector(".popup");
@@ -93,8 +91,8 @@ let clicks = 0;
 
 
 
-
-let cards = document.getElementById("cards")
+/*idk why i wrote this
+let cards = document.getElementById("cards")*/
 
 
 
@@ -104,140 +102,120 @@ class Card {
         this.match = match;
         this.png = png;
 
+        //push new cards in after class of card
 
-        /* 
-        this.card1 = "function that accepts functions as parameters and/or returns a function";
-         this.card2 = "higher-order function";
-         this.card3 = "math.random()";
-         this.card4 = "returns a random number between 0 and 1";
-         this.card5 = "math.floor(1 + 0.5)";
-         this.card6 = "1";
-         this.card7 = "'Cynclaire Hough'.length";
-         this.card8 = "15";
-         this.card9 = "returns true || false";
-         this.card10 = "boolean";
-         */
-    }
-}
-
-/*push new cards in after class of card*/
-
-cardarray.push(new Card("function that accepts functions as parameters and/or returns a function", "higher-order function", "png1"))
-cardarray.push(new Card("higher-order function", "function that accepts functions as parameters and/or returns a function", "png2"))
-cardarray.push(new Card("math.random()", "returns a random number between 0 and 1", "png3"))
-cardarray.push(new Card("returns a random number between 0 and 1", "math.random()", "png4"))
-cardarray.push(new Card("math.floor(1 + 0.5)", "1", "png5"))
-cardarray.push(new Card("1", "math.floor(1 + 0.5)", "png6"))
-cardarray.push(new Card("'Cynclaire Hough'.length", "15", "png7"))
-cardarray.push(new Card("15", "'Cynclaire Hough'.length", "png8"))
-cardarray.push(new Card("returns true || false", "boolean", "png9"))
-cardarray.push(new Card("boolean", "returns true || false", "png10"))
-cardarray.push(new Card("while (condition) {// statement}", "while loop", "png11"))
-cardarray.push(new Card("while loop", "while (condition) {// statement}", "png12"))
-cardarray.push(new Card("const myArray = []; let i = 10", "Output: 10", "png13"))
-cardarray.push(new Card("Output: 10", "const myArray = []; let i = 10", "png14"))
-cardarray.push(new Card("const arr = ['Ashley', 'Michael', 'Cody']; for (let i of arr) {console.log(i)", "Output: Ashley, Michael, Cody", "png15"))
-cardarray.push(new Card("Output: Ashley, Michael, Cody", "const arr = ['Ashley', 'Michael', 'Cody']; for (let i of arr) {console.log(i)", "png16"))
-cardarray.push(new Card("Initialization", "This expression runs before the execution of the first loop, and is usually used to create a counter.", "png17"))
-cardarray.push(new Card("This expression runs before the execution of the first loop, and is usually used to create a counter.", "Initialization", "png18"))
-cardarray.push(new Card("let i = 0; while (i < 10) { console.log(i);}", "infinite loop", "png19"))
-cardarray.push(new Card("infinite loop", "let i = 0; while (i < 10) { console.log(i);}", "png20"))
-/*  add png to push card array and add missing element*/
+        cardarray.push(new Card("function that accepts functions as parameters and/or returns a function", "higher-order function", "png1"))
+        cardarray.push(new Card("higher-order function", "function that accepts functions as parameters and/or returns a function", "png2"))
+        cardarray.push(new Card("math.random()", "returns a random number between 0 and 1", "png3"))
+        cardarray.push(new Card("returns a random number between 0 and 1", "math.random()", "png4"))
+        cardarray.push(new Card("math.floor(1 + 0.5)", "1", "png5"))
+        cardarray.push(new Card("1", "math.floor(1 + 0.5)", "png6"))
+        cardarray.push(new Card("'Cynclaire Hough'.length", "15", "png7"))
+        cardarray.push(new Card("15", "'Cynclaire Hough'.length", "png8"))
+        cardarray.push(new Card("returns true || false", "boolean", "png9"))
+        cardarray.push(new Card("boolean", "returns true || false", "png10"))
+        cardarray.push(new Card("while (condition) {// statement}", "while loop", "png11"))
+        cardarray.push(new Card("while loop", "while (condition) {// statement}", "png12"))
+        cardarray.push(new Card("const myArray = []; let i = 10", "Output: 10", "png13"))
+        cardarray.push(new Card("Output: 10", "const myArray = []; let i = 10", "png14"))
+        cardarray.push(new Card("const arr = ['Ashley', 'Michael', 'Cody']; for (let i of arr) {console.log(i)", "Output: Ashley, Michael, Cody", "png15"))
+        cardarray.push(new Card("Output: Ashley, Michael, Cody", "const arr = ['Ashley', 'Michael', 'Cody']; for (let i of arr) {console.log(i)", "png16"))
+        cardarray.push(new Card("Initialization", "This expression runs before the execution of the first loop, and is usually used to create a counter.", "png17"))
+        cardarray.push(new Card("This expression runs before the execution of the first loop, and is usually used to create a counter.", "Initialization", "png18"))
+        cardarray.push(new Card("let i = 0; while (i < 10) { console.log(i);}", "infinite loop", "png19"))
+        cardarray.push(new Card("infinite loop", "let i = 0; while (i < 10) { console.log(i);}", "png20"))
 
 
 
 
 
-document.addEventListener("Start", function () {
-    let pngs = document.querySelectorAll("png");
-    let cardarrays = document.querySelectorAll("cardarray");
-    pngs.forEach(png =>
-        png.addEventListener); cardarray.addEventListener("click", flipCard),
+        //start game
+        btn.addEventListener("Start", function () {
+            let pngs = document.querySelectorAll("png");
+            let cardarrays = document.querySelectorAll("cardarray");
+            pngs.forEach(png =>
+                png.addEventListener); cardarray.addEventListener("click", flipCard),
 
-            console.log([cardarray], [pngArray])
-}
-
-)
-
-/*make each card clippable*/
-
-
-
-
-
-let i = cardarray
-for (let i = 0; i < cards.length; i++) {
-    text += cars[i] + "<br>";
-}
-
-/*let div = [1, 2, 3, 4, 5];
-for (let i = 0; i < arr.length; i++) {
-    console.log(arr[i]);
-}*/
-
-
-
-
-const box = document.createElement("div");
-box.textContent = ("function that accepts functions as parameters and/or returns a function");
-box.appendChild(textbox);
-document.getElementById("cardboxes").appendChild(box);
-
-document.addEventListener("Start", function () {
-    let pngs = document.querySelectorAll("png");
-    pngs.forEach(png =>
-        png.addEventListener("click", flipCard),
-    )
-})
-
-
-/*need timer*/
-
-function Timer(settings) {
-    this.settings = settings;
-    this.timer = null;
-
-    this.fps = settings.fps || 30;
-    this.interval = Math.floor(1000 / 30);
-    this.timeInit = null;
-
-    return this;
-}
-
-Timer.prototype =
-{
-    run: function () {
-        var $this = this;
-
-        this.settings.run();
-        this.timeInit += this.interval;
-
-        this.timer = setTimeout(
-            function () { $this.run() },
-            this.timeInit - (new Date).getTime()
-        );
-    },
-
-    start: function () {
-        if (this.timer == null) {
-            this.timeInit = (new Date).getTime();
-            this.run();
+                    console.log([cardarray], [pngArray])
         }
-    },
 
-    stop: function () {
-        clearTimeout(this.timer);
-        this.timer = null;
+        )
+
+
+
+
+
+
+
+
+        /* idk wtf this is
+                let i = cardarray
+                for (let i = 0; i < cards.length; i++) {
+                    text += cars[i] + "<br>";
+                }
+        
+                let div = [1, 2, 3, 4, 5];
+                for (let i = 0; i < arr.length; i++) {
+                    console.log(arr[i]);
+                }*/
+
+
+
+
+        const box = document.createElement("div");
+        box.textContent = ("function that accepts functions as parameters and/or returns a function");
+        box.appendChild(textbox);
+        document.getElementById("cardboxes").appendChild(box);
+
+
+        //timer needs to countdown from one minute or 60 seconds
+
+        function Timer(settings) {
+            this.settings = settings;
+            this.timer = null;
+
+            this.fps = settings.fps || 30;
+            this.interval = Math.floor(1000 / 30);
+            this.timeInit = null;
+
+            return this;
+        }
+
+        Timer.prototype =
+        {
+            run: function () {
+                var $this = this;
+
+                this.settings.run();
+                this.timeInit += this.interval;
+
+                this.timer = setTimeout(
+                    function () { $this.run() },
+                    this.timeInit - (new Date).getTime()
+                );
+            },
+
+            start: function () {
+                if (this.timer == null) {
+                    this.timeInit = (new Date).getTime();
+                    this.run();
+                }
+            },
+
+            stop: function () {
+                clearTimeout(this.timer);
+                this.timer = null;
+            }
+        }
+
+        var timer = new Timer({
+            fps: 30,
+            run: function () {
+                //run game code here
+            }
+        });
+
+        timer.start();
+        timer.stop();
     }
 }
-
-var timer = new Timer({
-    fps: 30,
-    run: function () {
-        //run game code here
-    }
-});
-
-timer.start();
-timer.stop();
-
