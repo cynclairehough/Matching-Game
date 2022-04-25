@@ -141,6 +141,14 @@ class Card {
 
         )
 
+        //score tracker
+        let winner = 0
+        let player1 = 0
+        let player2 = 0
+        if (player1 == 100)
+            console.log('Player1 Wins!');
+        else if (player2 == 100);
+        console.log('Player2 Wins!')
 
 
 
